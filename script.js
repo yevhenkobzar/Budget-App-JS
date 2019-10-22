@@ -20,7 +20,7 @@ let appData = {
     budget: money,
     timeData: time,
     expenses: {},
-    optionalExpenses: '',
+    optionalExpenses: {},
     income: [],
     savings: true,
 
@@ -89,7 +89,7 @@ function detectLevel() {
         console.log("Высокий уровень достатка");
     } else {
         console.log("Ошибка!");
-    }
+    };
 }
 
 detectLevel();
@@ -104,24 +104,27 @@ function checkSavings() {
         appData.monthIncome = save/100/12*percent;
         alert("Доход в месяц с вашего депозита: " + Math.round(appData.monthIncome));
 
-    }
+    };
 }
 
 checkSavings();
 
 function chooseOptExpenses() {
-    for (let i = 0; i < 3; i++) {
-        let 1q = prompt("Статья необязательных расходов?", ''),
-            2q = prompt("Во сколько обойдеться?", '');
+    for (let g = 0; g < 3; g++) {
+        let aq = prompt("Статья необязательных расходов?", ''),
+            bq = prompt("Во сколько обойдеться?", '');
 
-        if ((typeof(1q)) === 'string' && (typeof(1q)) !=null && (typeof(2q)) !=null && a != '' && b != '' && a.length < 50) {
+        if ((typeof(aq)) === 'string' && (typeof(bq)) !=null && (typeof(bq)) !=null && aq != '' && bq != '' && aq.length < 50) {
             console.log("done");
-            appData.optionalExpenses[1q] = 2q;
+            appData.optionalExpenses[aq] = bq;
         } else {
-            i = i -1;
+            g = g - 1;
         }
 
 
-    }
+    };
 }
+
+chooseOptExpenses();
+
 
